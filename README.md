@@ -41,11 +41,8 @@ A simple and interactive web-based calculator that performs basic arithmetic ope
 
 - ✨ Beautiful gradient UI design
 - 📱 Responsive layout for mobile devices
-- ⌨️ Keyboard support (Press Enter to calculate)
 - ✅ Input validation
 - 🎯 Error handling for invalid inputs, division by zero, and negative square roots
-- 🔄 Smooth animations and transitions
-- 🎨 Dynamic UI that adapts based on operation (e.g., SQRT shows only one input field)
 
 
 
