@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.calculator {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.stars {
+    text-align: center;
+    color: #764ba2;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+.menu {
+    margin-top: 30px;
+}
+
+.menu h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.menu ul li {
+    padding: 8px 0;
+    font-size: 16px;
+    color: #495057;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.operation-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.operation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.operation-btn:active {
+    transform: translateY(0);
+}
+
+.exit-btn {
+    grid-column: 1 / -1;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    border: none;
+    border-radius: 8px;
+    background: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.exit-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.input-section {
+    margin-top: 30px;
+}
+
+.input-section h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #495057;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.calculate-btn {
+    flex: 1;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    border: none;
+    border-radius: 8px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.calculate-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-btn {
+    flex: 1;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    border: none;
+    border-radius: 8px;
+    background: #6c757d;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 8px;
+    border-left: 5px solid #28a745;
+    animation: slideIn 0.3s ease;
+}
+
+.result.error {
+    border-left-color: #dc3545;
+}
+
+.result p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .button-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+}
